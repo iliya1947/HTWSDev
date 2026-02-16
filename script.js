@@ -29,12 +29,12 @@ const pricing = [
 ];
 
 const portfolio = [
-  { id: 1, category: "Corporate", link: "#" },
-  { id: 2, category: "E-commerce", link: "#" },
-  { id: 3, category: "Web App", link: "#" },
-  { id: 4, category: "Landing", link: "#" },
-  { id: 5, category: "Corporate", link: "#" },
-  { id: 6, category: "E-commerce", link: "#" },
+  { id: 1, category: "Corporate", link: "https://example.com/project-legal" },
+  { id: 2, category: "E-commerce", link: "https://example.com/project-fashion" },
+  { id: 3, category: "Web App", link: "https://example.com/project-logistics" },
+  { id: 4, category: "Landing", link: "https://example.com/project-realestate" },
+  { id: 5, category: "Corporate", link: "https://example.com/project-medical" },
+  { id: 6, category: "E-commerce", link: "https://example.com/project-electronics" },
 ];
 
 function detectLanguage() {
@@ -70,6 +70,12 @@ function applyTranslations() {
     if (value) el.placeholder = value;
   });
 
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+    const value = get(t, el.dataset.i18nAriaLabel);
+    if (value) el.setAttribute("aria-label", value);
+  });
+
+  renderAboutSkills();
   renderServices();
   renderWhy();
   renderPricing();
@@ -94,6 +100,11 @@ async function setLanguage(lang) {
 
 function card(title, desc = "") {
   return `<article class="card"><h3>${title}</h3>${desc ? `<p>${desc}</p>` : ""}</article>`;
+}
+
+function renderAboutSkills() {
+  const skills = ["frontend", "backend", "api", "performance", "seo"];
+  document.getElementById("about-skills").innerHTML = skills.map((key) => `<li>${get(t, `about.skills.${key}`)}</li>`).join("");
 }
 
 function renderServices() {
@@ -154,9 +165,10 @@ function bindPortfolio() {
     if (!btn) return;
     const id = btn.dataset.id;
     const data = get(t, `portfolio.projects.${id}`);
+    const project = portfolio.find((item) => String(item.id) === String(id));
     document.getElementById("modal-title").textContent = data.title;
     document.getElementById("modal-description").textContent = data.full;
-    document.getElementById("modal-link").href = "#";
+    document.getElementById("modal-link").href = project?.link || "#";
     document.getElementById("project-modal").classList.add("open");
     document.getElementById("project-modal").setAttribute("aria-hidden", "false");
   });
@@ -205,6 +217,8 @@ function startHeroCanvas() {
   let raf = null;
 
   const isMobile = matchMedia("(max-width: 768px)").matches;
+  const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
   const count = isMobile ? 10 : 22;
 
   function resize() {
@@ -223,6 +237,10 @@ function startHeroCanvas() {
   }
 
   function draw() {
+    if (document.hidden) {
+      raf = requestAnimationFrame(draw);
+      return;
+    }
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     ctx.textBaseline = "middle";
     rows.forEach((r) => {
