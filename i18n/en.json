@@ -1,0 +1,187 @@
+{
+  "siteTitle": "High-Tech Websites Development",
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "demos": "Demos"
+  },
+  "hero": {
+    "eyebrow": "Web Developer in Israel",
+    "title": "High-Tech Websites Development",
+    "subtitle": "Custom websites and web applications for businesses in Israel",
+    "description": "I build fast, scalable, and conversion-focused digital products. I help Israeli companies launch websites and web platforms that look premium and perform at a high level.",
+    "cta": "Start Your Project"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a professional web developer focused on building modern and optimized digital products. I work directly with businesses in Israel and deliver frontend, backend, API integrations, performance optimization, and SEO-ready architecture."
+  },
+  "services": {
+    "title": "Services",
+    "items": {
+      "Business Websites": {
+        "title": "Business Websites",
+        "desc": "Professional sites that build trust and convert visitors into clients."
+      },
+      "E-commerce": {
+        "title": "E-commerce",
+        "desc": "Online stores optimized for speed, UX, and sales growth."
+      },
+      "Web Applications": {
+        "title": "Web Applications",
+        "desc": "Custom web systems with clean architecture and scalable backend."
+      },
+      "Landing Pages": {
+        "title": "Landing Pages",
+        "desc": "High-converting pages for campaigns, launches, and lead generation."
+      },
+      "API Integrations": {
+        "title": "API Integrations",
+        "desc": "Reliable integration with CRMs, payment gateways, and external platforms."
+      },
+      "Speed Optimization": {
+        "title": "Speed Optimization",
+        "desc": "Core Web Vitals improvements for better UX and rankings."
+      },
+      "SEO for Israeli Market": {
+        "title": "SEO for Israeli Market",
+        "desc": "Localized structure and technical SEO tuned for Israeli search behavior."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "filters": {
+      "all": "All",
+      "corporate": "Corporate",
+      "ecommerce": "E-commerce",
+      "webapp": "Web App",
+      "landing": "Landing"
+    },
+    "viewProject": "View Project",
+    "projects": {
+      "1": {
+        "title": "Legal Company Website",
+        "short": "Corporate site with lead funnel.",
+        "full": "I designed and developed a multilingual law firm website with strong SEO foundations and a conversion-oriented structure."
+      },
+      "2": {
+        "title": "Fashion E-commerce",
+        "short": "Fast storefront with smart checkout.",
+        "full": "I implemented a modern e-commerce experience with high mobile performance, robust catalog management, and payment integrations."
+      },
+      "3": {
+        "title": "Logistics Dashboard",
+        "short": "Web app for daily operations.",
+        "full": "I built a custom dashboard for a logistics team with live data sync, role-based access, and reporting modules."
+      },
+      "4": {
+        "title": "Real Estate Landing",
+        "short": "Campaign page for qualified leads.",
+        "full": "I created a landing page optimized for paid traffic, with A/B-ready sections and conversion tracking."
+      },
+      "5": {
+        "title": "Medical Center Website",
+        "short": "Corporate platform for clinics.",
+        "full": "I delivered a clean and accessible clinic website featuring appointment workflows and local SEO structure."
+      },
+      "6": {
+        "title": "Electronics E-commerce",
+        "short": "High-volume catalog and filtering.",
+        "full": "I developed a scalable online store for electronics with advanced filtering, analytics, and optimized product pages."
+      }
+    }
+  },
+  "why": {
+    "title": "Why Work With Me",
+    "items": {
+      "Clean Code": "Clean Code",
+      "High Performance": "High Performance",
+      "Modern UI/UX": "Modern UI/UX",
+      "Fast Delivery": "Fast Delivery",
+      "Support After Launch": "Support After Launch",
+      "Deep understanding of Israeli business needs": "Deep understanding of Israeli business needs"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "items": {
+      "Basic": {
+        "title": "Basic",
+        "desc": "A focused website package for small businesses entering the digital market."
+      },
+      "Business": {
+        "title": "Business",
+        "desc": "A full business website with custom blocks, integrations, and strong SEO setup."
+      },
+      "Premium": {
+        "title": "Premium",
+        "desc": "A complete product-level solution with advanced features and long-term scalability."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "phoneLabel": "Phone:",
+    "whatsapp": "Chat on WhatsApp",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Tell me about your project",
+      "send": "Send Message"
+    }
+  },
+  "demos": {
+    "title": "Interactive Demos",
+    "intro": "I built these interactive demos to show how I solve real frontend tasks with clean JavaScript and production-style UX.",
+    "calculator": {
+      "title": "Website Cost Calculator",
+      "description": "I built this calculator to estimate project cost in real time based on scope and features.",
+      "typeLabel": "Select Type",
+      "pagesLabel": "Number of pages",
+      "seo": "SEO",
+      "admin": "Admin Panel",
+      "api": "API Integrations",
+      "resultLabel": "Estimated Cost:",
+      "types": {
+        "landing": "Landing",
+        "business": "Business",
+        "ecommerce": "E-commerce",
+        "webapp": "Web App"
+      }
+    },
+    "api": {
+      "title": "API Example Demo",
+      "description": "This demo shows API usage with async/await, loading states, and dynamic UI rendering.",
+      "button": "Load Data",
+      "loading": "Loading data...",
+      "error": "Failed to load data. Please try again."
+    },
+    "dashboard": {
+      "title": "Interactive Dashboard Preview",
+      "description": "I built this interactive dashboard with JavaScript and Canvas to visualize key metrics in motion.",
+      "visits": "Visits",
+      "users": "Users",
+      "conversions": "Conversions"
+    },
+    "form": {
+      "title": "Live Form Validation Demo",
+      "description": "I validate user input live to deliver clean, reliable forms before submit.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Validate Form",
+      "success": "Form is valid. Everything looks good.",
+      "invalid": "Please fix the highlighted fields.",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter a valid Israeli phone number."
+      }
+    }
+  }
+}
