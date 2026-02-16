@@ -51,9 +51,7 @@
         <div class="container">
           <h2 data-i18n="about.title">About Me</h2>
           <p data-i18n="about.description"></p>
-          <ul class="skills-grid">
-            <li>Frontend</li><li>Backend</li><li>API Integrations</li><li>Performance Optimization</li><li>SEO</li>
-          </ul>
+          <ul class="skills-grid" id="about-skills"></ul>
         </div>
       </section>
 
@@ -93,7 +91,7 @@
           <div>
             <h2 data-i18n="contact.title">Contact</h2>
             <p><strong data-i18n="contact.phoneLabel">Phone:</strong> +972-50-000-0000</p>
-            <p><strong>Email:</strong> hello@htwd.dev</p>
+            <p><strong data-i18n="contact.emailLabel">Email:</strong> hello@htwd.dev</p>
             <a class="btn-secondary" href="https://wa.me/972500000000" target="_blank" rel="noopener" data-i18n="contact.whatsapp">Chat on WhatsApp</a>
           </div>
           <form class="contact-form">
@@ -116,7 +114,7 @@
 
     <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
       <div class="modal-content">
-        <button class="close-modal" id="close-modal" aria-label="Close">×</button>
+        <button class="close-modal" id="close-modal" data-i18n-aria-label="portfolio.close" aria-label="Close">×</button>
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
         <a id="modal-link" class="btn-primary" href="#" target="_blank" rel="noopener" data-i18n="portfolio.viewProject">View Project</a>
