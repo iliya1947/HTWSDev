@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-Tech Websites Development</title>
+    <meta name="description" content="High-Tech Websites Development — custom websites and web applications for businesses in Israel." />
+    <meta property="og:title" content="High-Tech Websites Development" />
+    <meta property="og:description" content="Custom websites and web applications for businesses in Israel." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="top">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" data-i18n="siteTitle">High-Tech Websites Development</a>
+        <nav class="nav" aria-label="Main">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="he">HE</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="container hero-content reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Web Developer in Israel</p>
+          <h1 data-i18n="hero.title">High-Tech Websites Development</h1>
+          <p class="subhead" data-i18n="hero.subtitle">Custom websites and web applications for businesses in Israel</p>
+          <p class="lead" data-i18n="hero.description"></p>
+          <a class="btn-primary" href="#contact" data-i18n="hero.cta">Start Your Project</a>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal">
+        <div class="container">
+          <h2 data-i18n="about.title">About Me</h2>
+          <p data-i18n="about.description"></p>
+          <ul class="skills-grid">
+            <li>Frontend</li><li>Backend</li><li>API Integrations</li><li>Performance Optimization</li><li>SEO</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="services" class="section reveal">
+        <div class="container">
+          <h2 data-i18n="services.title">Services</h2>
+          <div class="cards" id="services-cards"></div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="portfolio.title">Portfolio</h2>
+            <div class="filters" id="portfolio-filters"></div>
+          </div>
+          <div class="portfolio-grid" id="portfolio-grid"></div>
+        </div>
+      </section>
+
+      <section id="why" class="section reveal">
+        <div class="container">
+          <h2 data-i18n="why.title">Why Work With Me</h2>
+          <div class="cards compact" id="why-list"></div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section reveal">
+        <div class="container">
+          <h2 data-i18n="pricing.title">Pricing</h2>
+          <div class="cards" id="pricing-cards"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <div class="container contact-grid">
+          <div>
+            <h2 data-i18n="contact.title">Contact</h2>
+            <p><strong data-i18n="contact.phoneLabel">Phone:</strong> +972-50-000-0000</p>
+            <p><strong>Email:</strong> hello@htwd.dev</p>
+            <a class="btn-secondary" href="https://wa.me/972500000000" target="_blank" rel="noopener" data-i18n="contact.whatsapp">Chat on WhatsApp</a>
+          </div>
+          <form class="contact-form">
+            <input type="text" name="name" data-i18n-placeholder="contact.form.name" placeholder="Name" required />
+            <input type="email" name="email" data-i18n-placeholder="contact.form.email" placeholder="Email" required />
+            <textarea name="message" rows="5" data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project" required></textarea>
+            <button type="submit" class="btn-primary" data-i18n="contact.form.send">Send Message</button>
+          </form>
+        </div>
+        <div class="container map-wrap">
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Tel%20Aviv%2C%20Israel&output=embed"
+            title="Israel map"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <button class="close-modal" id="close-modal" aria-label="Close">×</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <a id="modal-link" class="btn-primary" href="#" target="_blank" rel="noopener" data-i18n="portfolio.viewProject">View Project</a>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
