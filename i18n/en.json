@@ -5,7 +5,8 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "pricing": "Pricing",
-    "contact": "Contact"
+    "contact": "Contact",
+    "demos": "Interactive Demos"
   },
   "hero": {
     "eyebrow": "Web Developer in Israel",
@@ -141,5 +142,56 @@
       "send": "Send Message"
     },
     "emailLabel": "Email:"
+  },
+  "demos": {
+    "title": "Interactive Demos",
+    "intro": "I built these demos to show how I solve real frontend tasks with clean JavaScript, API handling, and practical UX.",
+    "open": "Open demo",
+    "calculator": {
+      "title": "Website Cost Calculator",
+      "description": "I built this calculator to instantly estimate project scope and price.",
+      "typeLabel": "Project type",
+      "pagesLabel": "Number of pages",
+      "seo": "SEO package",
+      "admin": "Admin panel",
+      "api": "API integrations",
+      "resultLabel": "Estimated price:",
+      "types": {
+        "Landing": "Landing",
+        "Business": "Business",
+        "E-commerce": "E-commerce",
+        "Web App": "Web App"
+      }
+    },
+    "api": {
+      "title": "API Example Demo",
+      "description": "This demo shows API usage with async/await and real-time UI updates.",
+      "loadButton": "Load Data",
+      "loading": "Loading posts...",
+      "error": "Unable to load data right now."
+    },
+    "dashboard": {
+      "title": "Interactive Dashboard Preview",
+      "description": "Interactive dashboard built with JavaScript and Canvas animation.",
+      "visits": "Visits",
+      "users": "Users",
+      "conversions": "Conversions"
+    },
+    "validation": {
+      "title": "Live Form Validation Demo",
+      "description": "I validate every field in real time, including Israeli phone format.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Validate Form",
+      "success": "Everything looks good. The form is valid.",
+      "errors": {
+        "name": "Please enter your name (min 2 chars).",
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter a valid Israeli phone number.",
+        "message": "Please enter at least 10 characters."
+      }
+    }
   }
 }
