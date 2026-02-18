@@ -13,6 +13,16 @@ const services = [
   "SEO for Israeli Market",
 ];
 
+const serviceLinks = {
+  "Business Websites": "services/business-websites.html",
+  "E-commerce": "services/ecommerce.html",
+  "Web Applications": "services/web-applications.html",
+  "Landing Pages": "services/landing-pages.html",
+  "API Integrations": "services/api-integrations.html",
+  "Speed Optimization": "services/speed-optimization.html",
+  "SEO for Israeli Market": "services/seo-israel.html",
+};
+
 const whyKeys = [
   "Clean Code",
   "High Performance",
@@ -121,7 +131,12 @@ function renderAboutSkills() {
 function renderServices() {
   const root = document.getElementById("services-cards");
   root.innerHTML = services
-    .map((name) => card(get(t, `services.items.${name}.title`), get(t, `services.items.${name}.desc`)))
+    .map((name) => {
+      const title = get(t, `services.items.${name}.title`);
+      const desc = get(t, `services.items.${name}.desc`);
+      const link = serviceLinks[name];
+      return `<article class="card"><h3>${title}</h3><p>${desc}</p><a class="btn-secondary service-link" href="${link}">${get(t, "services.learnMore")}</a></article>`;
+    })
     .join("");
 }
 

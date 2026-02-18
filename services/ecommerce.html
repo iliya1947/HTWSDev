@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce | High-Tech Websites Development</title>
+    <meta name="description" content="E-commerce service details for Israeli businesses." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-service-key="ecommerce">
+    <header class="header" id="top">
+      <div class="container nav-wrap">
+        <a href="../index.html#top" class="brand" data-i18n="siteTitle">High-Tech Websites Development</a>
+        <nav class="nav" aria-label="Main">
+          <a href="../index.html#services" data-i18n="nav.services">Services</a>
+          <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="he">HE</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="service-page-main">
+      <section class="service-hero">
+        <div class="container reveal in">
+          <h1 id="service-title">E-commerce</h1>
+          <p class="subhead" id="service-subtitle"></p>
+          <p class="lead" id="service-intro"></p>
+          <a class="btn-secondary back-link" href="../index.html#services" data-i18n="servicePages.backToServices">Back to Services</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container service-layout">
+          <article class="service-panel">
+            <h2 data-i18n="servicePages.processTitle">My Process</h2>
+            <ul id="service-process"></ul>
+          </article>
+          <article class="service-panel">
+            <h2 data-i18n="servicePages.deliverablesTitle">What I Deliver</h2>
+            <ul id="service-deliverables"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container service-layout">
+          <article class="service-panel">
+            <h2 data-i18n="servicePages.fitTitle">Who This Service Fits</h2>
+            <ul id="service-fit"></ul>
+          </article>
+          <article class="service-panel">
+            <h2 data-i18n="servicePages.finalTitle">Result</h2>
+            <p class="lead" id="service-outro"></p>
+            <a class="btn-primary" href="../index.html#contact" data-i18n="servicePages.cta">Discuss My Project</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../service-detail.js" defer></script>
+  </body>
+</html>

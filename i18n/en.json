@@ -57,7 +57,8 @@
         "title": "SEO for Israeli Market",
         "desc": "Localized structure and technical SEO tuned for Israeli search behavior."
       }
-    }
+    },
+    "learnMore": "Detailed page"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -192,6 +193,175 @@
         "phone": "Please enter a valid Israeli phone number.",
         "message": "Please enter at least 10 characters."
       }
+    }
+  },
+  "servicePages": {
+    "backToServices": "Back to Services",
+    "processTitle": "My Process",
+    "deliverablesTitle": "What I Deliver",
+    "fitTitle": "Who This Service Fits",
+    "finalTitle": "Result",
+    "cta": "Discuss My Project",
+    "business-websites": {
+      "title": "Business Websites",
+      "subtitle": "I create premium business websites that build trust and generate qualified leads in Israel.",
+      "intro": "I design and develop business websites focused on credibility, speed, and clear positioning. Every page is built to support your sales process and communicate your value immediately.",
+      "process": [
+        "I analyze your market, offer, and ideal clients.",
+        "I structure the site architecture around business goals.",
+        "I build responsive pages with clear conversion paths.",
+        "I optimize performance and technical SEO before launch."
+      ],
+      "deliverables": [
+        "Custom UI aligned with your brand.",
+        "Fast, mobile-first implementation.",
+        "Lead forms and contact channels setup.",
+        "SEO-ready page structure and metadata."
+      ],
+      "fit": [
+        "Companies that need a serious online presence.",
+        "Teams replacing an outdated website.",
+        "Businesses targeting the Israeli market."
+      ],
+      "outro": "You get a website that looks professional, loads fast, and supports real business growth."
+    },
+    "ecommerce": {
+      "title": "E-commerce Development",
+      "subtitle": "I build fast, conversion-focused e-commerce stores tailored for Israeli customers.",
+      "intro": "I develop online stores with strong UX, clean catalog architecture, and stable checkout flows. My focus is revenue growth through better speed, structure, and purchasing experience.",
+      "process": [
+        "I define product architecture and category logic.",
+        "I design conversion-oriented product and checkout flows.",
+        "I implement payment, shipping, and tracking integrations.",
+        "I optimize performance for mobile shopping."
+      ],
+      "deliverables": [
+        "Scalable storefront and catalog pages.",
+        "Optimized cart and checkout experience.",
+        "Integration with payment and analytics tools.",
+        "Technical SEO baseline for product pages."
+      ],
+      "fit": [
+        "Retail brands entering or scaling online sales.",
+        "Businesses with growing product catalogs.",
+        "Stores that need better mobile conversions."
+      ],
+      "outro": "You get an e-commerce platform built for growth, retention, and high-performance sales."
+    },
+    "web-applications": {
+      "title": "Web Applications",
+      "subtitle": "I develop custom web applications with clean architecture and long-term scalability.",
+      "intro": "I build web apps that solve operational tasks, automate workflows, and provide reliable user experiences. The codebase is structured for maintainability and future expansion.",
+      "process": [
+        "I map product requirements and user roles.",
+        "I design architecture and data flows.",
+        "I implement frontend and backend modules.",
+        "I test performance, security, and edge cases."
+      ],
+      "deliverables": [
+        "Custom dashboard and role-based flows.",
+        "API-connected frontend modules.",
+        "Scalable backend foundations.",
+        "Documentation for future iterations."
+      ],
+      "fit": [
+        "Companies digitizing internal processes.",
+        "Startups building SaaS or internal tools.",
+        "Teams requiring custom business logic."
+      ],
+      "outro": "You get a stable, maintainable web application that is ready for real production use."
+    },
+    "landing-pages": {
+      "title": "Landing Pages",
+      "subtitle": "I create high-converting landing pages for campaigns, launches, and lead capture.",
+      "intro": "I build focused landing pages with one clear goal: conversion. Messaging, structure, and UI are designed to reduce friction and move users to action quickly.",
+      "process": [
+        "I define conversion objective and audience intent.",
+        "I craft section flow for clarity and trust.",
+        "I build fast, responsive, campaign-ready layout.",
+        "I connect tracking and form events for analytics."
+      ],
+      "deliverables": [
+        "Conversion-first page structure.",
+        "Responsive design optimized for paid traffic.",
+        "Integrated forms and CTA blocks.",
+        "Event tracking for campaign optimization."
+      ],
+      "fit": [
+        "Businesses running paid campaigns.",
+        "Teams launching new offers quickly.",
+        "Companies testing market demand."
+      ],
+      "outro": "You get a landing page that is focused, measurable, and built to maximize conversion rate."
+    },
+    "api-integrations": {
+      "title": "API Integrations",
+      "subtitle": "I connect websites and apps with external platforms reliably and securely.",
+      "intro": "I implement API integrations that sync data across CRMs, payment systems, messaging platforms, and internal tools. The goal is stable automation and fewer manual operations.",
+      "process": [
+        "I audit required systems and data contracts.",
+        "I design integration logic and error handling.",
+        "I implement secure API communication layers.",
+        "I monitor and validate sync reliability."
+      ],
+      "deliverables": [
+        "Third-party API connection setup.",
+        "Data mapping and validation rules.",
+        "Error handling and retry strategies.",
+        "Technical documentation for maintenance."
+      ],
+      "fit": [
+        "Businesses using multiple disconnected systems.",
+        "Teams needing real-time data synchronization.",
+        "Products that rely on external services."
+      ],
+      "outro": "You get robust integrations that reduce manual work and improve operational reliability."
+    },
+    "speed-optimization": {
+      "title": "Speed Optimization",
+      "subtitle": "I improve website performance to increase engagement, rankings, and conversions.",
+      "intro": "I optimize frontend performance using practical improvements that impact real users. Faster websites produce better user experience and better commercial outcomes.",
+      "process": [
+        "I run performance diagnostics and bottleneck analysis.",
+        "I optimize assets, rendering paths, and scripts.",
+        "I improve loading strategy and caching behavior.",
+        "I validate Core Web Vitals improvements."
+      ],
+      "deliverables": [
+        "Reduced load times on desktop and mobile.",
+        "Improved Core Web Vitals metrics.",
+        "Optimized CSS, JS, and media delivery.",
+        "Implementation report with measurable gains."
+      ],
+      "fit": [
+        "Websites with slow mobile experience.",
+        "Businesses losing conversions due to speed.",
+        "Teams preparing for SEO and scale."
+      ],
+      "outro": "You get a faster, smoother website that supports stronger SEO and better conversion performance."
+    },
+    "seo-israel": {
+      "title": "SEO for Israeli Market",
+      "subtitle": "I implement technical SEO foundations tailored for search behavior in Israel.",
+      "intro": "I build SEO-ready website structures with clean metadata, semantic markup, and localized targeting. This helps your business rank for relevant searches and attract qualified traffic.",
+      "process": [
+        "I audit technical SEO and indexing status.",
+        "I build page structure for intent-based targeting.",
+        "I optimize metadata, headings, and internal linking.",
+        "I configure localized SEO signals for Israel."
+      ],
+      "deliverables": [
+        "Technical SEO improvements and fixes.",
+        "Structured metadata and semantic hierarchy.",
+        "Clean internal linking architecture.",
+        "Localized SEO setup for Israeli audience."
+      ],
+      "fit": [
+        "Businesses competing in local Israeli search.",
+        "Sites with indexing or structure issues.",
+        "Teams that need scalable SEO foundations."
+      ],
+      "outro": "You get a technically strong SEO base that improves discoverability and supports long-term growth."
     }
   }
 }
