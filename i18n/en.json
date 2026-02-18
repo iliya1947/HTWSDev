@@ -1,6 +1,13 @@
 {
   "siteTitle": "High-Tech Websites Development",
-  "nav": {"about": "About", "services": "Services", "portfolio": "Portfolio", "pricing": "Pricing", "contact": "Contact"},
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "demos": "Interactive Demos"
+  },
   "hero": {
     "eyebrow": "Web Developer in Israel",
     "title": "High-Tech Websites Development",
@@ -10,32 +17,92 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I am a professional web developer focused on building modern and optimized digital products. I work directly with businesses in Israel and deliver frontend, backend, API integrations, performance optimization, and SEO-ready architecture."
+    "description": "I am a professional web developer focused on building modern and optimized digital products. I work directly with businesses in Israel and deliver frontend, backend, API integrations, performance optimization, and SEO-ready architecture.",
+    "skills": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "api": "API Integrations",
+      "performance": "Performance Optimization",
+      "seo": "SEO"
+    }
   },
   "services": {
     "title": "Services",
     "items": {
-      "Business Websites": {"title": "Business Websites", "desc": "Professional sites that build trust and convert visitors into clients."},
-      "E-commerce": {"title": "E-commerce", "desc": "Online stores optimized for speed, UX, and sales growth."},
-      "Web Applications": {"title": "Web Applications", "desc": "Custom web systems with clean architecture and scalable backend."},
-      "Landing Pages": {"title": "Landing Pages", "desc": "High-converting pages for campaigns, launches, and lead generation."},
-      "API Integrations": {"title": "API Integrations", "desc": "Reliable integration with CRMs, payment gateways, and external platforms."},
-      "Speed Optimization": {"title": "Speed Optimization", "desc": "Core Web Vitals improvements for better UX and rankings."},
-      "SEO for Israeli Market": {"title": "SEO for Israeli Market", "desc": "Localized structure and technical SEO tuned for Israeli search behavior."}
-    }
+      "Business Websites": {
+        "title": "Business Websites",
+        "desc": "Professional sites that build trust and convert visitors into clients."
+      },
+      "E-commerce": {
+        "title": "E-commerce",
+        "desc": "Online stores optimized for speed, UX, and sales growth."
+      },
+      "Web Applications": {
+        "title": "Web Applications",
+        "desc": "Custom web systems with clean architecture and scalable backend."
+      },
+      "Landing Pages": {
+        "title": "Landing Pages",
+        "desc": "High-converting pages for campaigns, launches, and lead generation."
+      },
+      "API Integrations": {
+        "title": "API Integrations",
+        "desc": "Reliable integration with CRMs, payment gateways, and external platforms."
+      },
+      "Speed Optimization": {
+        "title": "Speed Optimization",
+        "desc": "Core Web Vitals improvements for better UX and rankings."
+      },
+      "SEO for Israeli Market": {
+        "title": "SEO for Israeli Market",
+        "desc": "Localized structure and technical SEO tuned for Israeli search behavior."
+      }
+    },
+    "learnMore": "Detailed page"
   },
   "portfolio": {
     "title": "Portfolio",
-    "filters": {"all": "All", "corporate": "Corporate", "ecommerce": "E-commerce", "webapp": "Web App", "landing": "Landing"},
+    "filters": {
+      "all": "All",
+      "corporate": "Corporate",
+      "ecommerce": "E-commerce",
+      "webapp": "Web App",
+      "landing": "Landing"
+    },
     "viewProject": "View Project",
     "projects": {
-      "1": {"title": "Legal Company Website", "short": "Corporate site with lead funnel.", "full": "I designed and developed a multilingual law firm website with strong SEO foundations and a conversion-oriented structure."},
-      "2": {"title": "Fashion E-commerce", "short": "Fast storefront with smart checkout.", "full": "I implemented a modern e-commerce experience with high mobile performance, robust catalog management, and payment integrations."},
-      "3": {"title": "Logistics Dashboard", "short": "Web app for daily operations.", "full": "I built a custom dashboard for a logistics team with live data sync, role-based access, and reporting modules."},
-      "4": {"title": "Real Estate Landing", "short": "Campaign page for qualified leads.", "full": "I created a landing page optimized for paid traffic, with A/B-ready sections and conversion tracking."},
-      "5": {"title": "Medical Center Website", "short": "Corporate platform for clinics.", "full": "I delivered a clean and accessible clinic website featuring appointment workflows and local SEO structure."},
-      "6": {"title": "Electronics E-commerce", "short": "High-volume catalog and filtering.", "full": "I developed a scalable online store for electronics with advanced filtering, analytics, and optimized product pages."}
-    }
+      "1": {
+        "title": "Legal Company Website",
+        "short": "Corporate site with lead funnel.",
+        "full": "I designed and developed a multilingual law firm website with strong SEO foundations and a conversion-oriented structure."
+      },
+      "2": {
+        "title": "Fashion E-commerce",
+        "short": "Fast storefront with smart checkout.",
+        "full": "I implemented a modern e-commerce experience with high mobile performance, robust catalog management, and payment integrations."
+      },
+      "3": {
+        "title": "Logistics Dashboard",
+        "short": "Web app for daily operations.",
+        "full": "I built a custom dashboard for a logistics team with live data sync, role-based access, and reporting modules."
+      },
+      "4": {
+        "title": "Real Estate Landing",
+        "short": "Campaign page for qualified leads.",
+        "full": "I created a landing page optimized for paid traffic, with A/B-ready sections and conversion tracking."
+      },
+      "5": {
+        "title": "Medical Center Website",
+        "short": "Corporate platform for clinics.",
+        "full": "I delivered a clean and accessible clinic website featuring appointment workflows and local SEO structure."
+      },
+      "6": {
+        "title": "Electronics E-commerce",
+        "short": "High-volume catalog and filtering.",
+        "full": "I developed a scalable online store for electronics with advanced filtering, analytics, and optimized product pages."
+      }
+    },
+    "close": "Close"
   },
   "why": {
     "title": "Why Work With Me",
@@ -51,9 +118,18 @@
   "pricing": {
     "title": "Pricing",
     "items": {
-      "Basic": {"title": "Basic", "desc": "A focused website package for small businesses entering the digital market."},
-      "Business": {"title": "Business", "desc": "A full business website with custom blocks, integrations, and strong SEO setup."},
-      "Premium": {"title": "Premium", "desc": "A complete product-level solution with advanced features and long-term scalability."}
+      "Basic": {
+        "title": "Basic",
+        "desc": "A focused website package for small businesses entering the digital market."
+      },
+      "Business": {
+        "title": "Business",
+        "desc": "A full business website with custom blocks, integrations, and strong SEO setup."
+      },
+      "Premium": {
+        "title": "Premium",
+        "desc": "A complete product-level solution with advanced features and long-term scalability."
+      }
     }
   },
   "contact": {
@@ -65,6 +141,270 @@
       "email": "Your email",
       "message": "Tell me about your project",
       "send": "Send Message"
+    },
+    "emailLabel": "Email:"
+  },
+  "demos": {
+    "title": "Interactive Demos",
+    "intro": "I built these demos to show how I solve real frontend tasks with clean JavaScript, API handling, and practical UX.",
+    "open": "Open demo",
+    "calculator": {
+      "title": "Website Cost Calculator",
+      "description": "I built this calculator to instantly estimate project scope and price.",
+      "typeLabel": "Project type",
+      "pagesLabel": "Number of pages",
+      "seo": "SEO package",
+      "admin": "Admin panel",
+      "api": "API integrations",
+      "resultLabel": "Estimated price:",
+      "types": {
+        "Landing": "Landing",
+        "Business": "Business",
+        "E-commerce": "E-commerce",
+        "Web App": "Web App"
+      }
+    },
+    "api": {
+      "title": "API Example Demo",
+      "description": "This demo shows API usage with async/await and real-time UI updates.",
+      "loadButton": "Load Data",
+      "loading": "Loading posts...",
+      "error": "Unable to load data right now."
+    },
+    "dashboard": {
+      "title": "Interactive Dashboard Preview",
+      "description": "Interactive dashboard built with JavaScript and Canvas animation.",
+      "visits": "Visits",
+      "users": "Users",
+      "conversions": "Conversions"
+    },
+    "validation": {
+      "title": "Live Form Validation Demo",
+      "description": "I validate every field in real time, including Israeli phone format.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Validate Form",
+      "success": "Everything looks good. The form is valid.",
+      "errors": {
+        "name": "Please enter your name (min 2 chars).",
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter a valid Israeli phone number.",
+        "message": "Please enter at least 10 characters."
+      }
+    }
+  },
+  "servicePages": {
+    "backToServices": "Back to Services",
+    "processTitle": "My Process",
+    "deliverablesTitle": "What I Deliver",
+    "fitTitle": "Who This Service Fits",
+    "finalTitle": "Result",
+    "cta": "Discuss My Project",
+    "business-websites": {
+      "title": "Business Websites",
+      "subtitle": "I create premium business websites that build trust and generate qualified leads in Israel.",
+      "intro": "I design and develop business websites focused on credibility, speed, and clear positioning. Every page is built to support your sales process and communicate your value immediately.",
+      "process": [
+        "I analyze your market, offer, and ideal clients.",
+        "I structure the site architecture around business goals.",
+        "I build responsive pages with clear conversion paths.",
+        "I optimize performance and technical SEO before launch."
+      ],
+      "deliverables": [
+        "Custom UI aligned with your brand.",
+        "Fast, mobile-first implementation.",
+        "Lead forms and contact channels setup.",
+        "SEO-ready page structure and metadata."
+      ],
+      "fit": [
+        "Companies that need a serious online presence.",
+        "Teams replacing an outdated website.",
+        "Businesses targeting the Israeli market."
+      ],
+      "outro": "You get a website that looks professional, loads fast, and supports real business growth."
+    },
+    "ecommerce": {
+      "title": "E-commerce Development",
+      "subtitle": "I build fast, conversion-focused e-commerce stores tailored for Israeli customers.",
+      "intro": "I develop online stores with strong UX, clean catalog architecture, and stable checkout flows. My focus is revenue growth through better speed, structure, and purchasing experience.",
+      "process": [
+        "I define product architecture and category logic.",
+        "I design conversion-oriented product and checkout flows.",
+        "I implement payment, shipping, and tracking integrations.",
+        "I optimize performance for mobile shopping."
+      ],
+      "deliverables": [
+        "Scalable storefront and catalog pages.",
+        "Optimized cart and checkout experience.",
+        "Integration with payment and analytics tools.",
+        "Technical SEO baseline for product pages."
+      ],
+      "fit": [
+        "Retail brands entering or scaling online sales.",
+        "Businesses with growing product catalogs.",
+        "Stores that need better mobile conversions."
+      ],
+      "outro": "You get an e-commerce platform built for growth, retention, and high-performance sales."
+    },
+    "web-applications": {
+      "title": "Web Applications",
+      "subtitle": "I develop custom web applications with clean architecture and long-term scalability.",
+      "intro": "I build web apps that solve operational tasks, automate workflows, and provide reliable user experiences. The codebase is structured for maintainability and future expansion.",
+      "process": [
+        "I map product requirements and user roles.",
+        "I design architecture and data flows.",
+        "I implement frontend and backend modules.",
+        "I test performance, security, and edge cases."
+      ],
+      "deliverables": [
+        "Custom dashboard and role-based flows.",
+        "API-connected frontend modules.",
+        "Scalable backend foundations.",
+        "Documentation for future iterations."
+      ],
+      "fit": [
+        "Companies digitizing internal processes.",
+        "Startups building SaaS or internal tools.",
+        "Teams requiring custom business logic."
+      ],
+      "outro": "You get a stable, maintainable web application that is ready for real production use."
+    },
+    "landing-pages": {
+      "title": "Landing Pages",
+      "subtitle": "I create high-converting landing pages for campaigns, launches, and lead capture.",
+      "intro": "I build focused landing pages with one clear goal: conversion. Messaging, structure, and UI are designed to reduce friction and move users to action quickly.",
+      "process": [
+        "I define conversion objective and audience intent.",
+        "I craft section flow for clarity and trust.",
+        "I build fast, responsive, campaign-ready layout.",
+        "I connect tracking and form events for analytics."
+      ],
+      "deliverables": [
+        "Conversion-first page structure.",
+        "Responsive design optimized for paid traffic.",
+        "Integrated forms and CTA blocks.",
+        "Event tracking for campaign optimization."
+      ],
+      "fit": [
+        "Businesses running paid campaigns.",
+        "Teams launching new offers quickly.",
+        "Companies testing market demand."
+      ],
+      "outro": "You get a landing page that is focused, measurable, and built to maximize conversion rate."
+    },
+    "api-integrations": {
+      "title": "API Integrations",
+      "subtitle": "I connect websites and apps with external platforms reliably and securely.",
+      "intro": "I implement API integrations that sync data across CRMs, payment systems, messaging platforms, and internal tools. The goal is stable automation and fewer manual operations.",
+      "process": [
+        "I audit required systems and data contracts.",
+        "I design integration logic and error handling.",
+        "I implement secure API communication layers.",
+        "I monitor and validate sync reliability."
+      ],
+      "deliverables": [
+        "Third-party API connection setup.",
+        "Data mapping and validation rules.",
+        "Error handling and retry strategies.",
+        "Technical documentation for maintenance."
+      ],
+      "fit": [
+        "Businesses using multiple disconnected systems.",
+        "Teams needing real-time data synchronization.",
+        "Products that rely on external services."
+      ],
+      "outro": "You get robust integrations that reduce manual work and improve operational reliability."
+    },
+    "speed-optimization": {
+      "title": "Speed Optimization",
+      "subtitle": "I improve website performance to increase engagement, rankings, and conversions.",
+      "intro": "I optimize frontend performance using practical improvements that impact real users. Faster websites produce better user experience and better commercial outcomes.",
+      "process": [
+        "I run performance diagnostics and bottleneck analysis.",
+        "I optimize assets, rendering paths, and scripts.",
+        "I improve loading strategy and caching behavior.",
+        "I validate Core Web Vitals improvements."
+      ],
+      "deliverables": [
+        "Reduced load times on desktop and mobile.",
+        "Improved Core Web Vitals metrics.",
+        "Optimized CSS, JS, and media delivery.",
+        "Implementation report with measurable gains."
+      ],
+      "fit": [
+        "Websites with slow mobile experience.",
+        "Businesses losing conversions due to speed.",
+        "Teams preparing for SEO and scale."
+      ],
+      "outro": "You get a faster, smoother website that supports stronger SEO and better conversion performance."
+    },
+    "seo-israel": {
+      "title": "SEO for Israeli Market",
+      "subtitle": "I implement technical SEO foundations tailored for search behavior in Israel.",
+      "intro": "I build SEO-ready website structures with clean metadata, semantic markup, and localized targeting. This helps your business rank for relevant searches and attract qualified traffic.",
+      "process": [
+        "I audit technical SEO and indexing status.",
+        "I build page structure for intent-based targeting.",
+        "I optimize metadata, headings, and internal linking.",
+        "I configure localized SEO signals for Israel."
+      ],
+      "deliverables": [
+        "Technical SEO improvements and fixes.",
+        "Structured metadata and semantic hierarchy.",
+        "Clean internal linking architecture.",
+        "Localized SEO setup for Israeli audience."
+      ],
+      "fit": [
+        "Businesses competing in local Israeli search.",
+        "Sites with indexing or structure issues.",
+        "Teams that need scalable SEO foundations."
+      ],
+      "outro": "You get a technically strong SEO base that improves discoverability and supports long-term growth."
+    }
+  },
+  "quoteCalculator": {
+    "title": "Website Cost Calculator",
+    "subtitle": "I use this calculator to provide a realistic project estimate based on scope, complexity, and delivery timeline.",
+    "cta": "Discuss exact scope",
+    "typeLabel": "Project type",
+    "pagesLabel": "Number of pages",
+    "designLabel": "Design complexity",
+    "deadlineLabel": "Delivery timeline",
+    "seo": "SEO setup",
+    "admin": "Admin panel",
+    "api": "API integrations",
+    "content": "Content upload & formatting",
+    "summaryTitle": "Estimated budget",
+    "priceLabel": "Estimated total:",
+    "disclaimer": "This is a preliminary estimate. Final price depends on technical details and integrations.",
+    "startBtn": "Start this project",
+    "types": {
+      "Landing": "Landing",
+      "Business": "Business Website",
+      "E-commerce": "E-commerce",
+      "Web App": "Web Application"
+    },
+    "designs": {
+      "Standard": "Standard UI",
+      "Premium": "Premium UI/UX",
+      "Enterprise": "Enterprise-level design system"
+    },
+    "deadlines": {
+      "Flexible": "Flexible timeline",
+      "Priority": "Priority delivery",
+      "Urgent": "Urgent delivery"
+    },
+    "breakdown": {
+      "base": "Base package",
+      "pages": "Additional pages",
+      "design": "Design level",
+      "deadline": "Timeline",
+      "seo": "SEO setup",
+      "admin": "Admin panel",
+      "api": "API integrations",
+      "content": "Content upload"
     }
   }
 }

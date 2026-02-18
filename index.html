@@ -22,6 +22,7 @@
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#services" data-i18n="nav.services">Services</a>
           <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="#demos" data-i18n="nav.demos">Interactive Demos</a>
           <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
@@ -51,9 +52,7 @@
         <div class="container">
           <h2 data-i18n="about.title">About Me</h2>
           <p data-i18n="about.description"></p>
-          <ul class="skills-grid">
-            <li>Frontend</li><li>Backend</li><li>API Integrations</li><li>Performance Optimization</li><li>SEO</li>
-          </ul>
+          <ul class="skills-grid" id="about-skills"></ul>
         </div>
       </section>
 
@@ -64,6 +63,50 @@
         </div>
       </section>
 
+
+      <section id="quote-calculator" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="quoteCalculator.title">Website Cost Calculator</h2>
+            <a class="btn-secondary" href="#contact" data-i18n="quoteCalculator.cta">Discuss exact scope</a>
+          </div>
+          <p class="lead" data-i18n="quoteCalculator.subtitle"></p>
+
+          <div class="quote-calculator-grid">
+            <form class="quote-form card" id="quote-form">
+              <label>
+                <span data-i18n="quoteCalculator.typeLabel"></span>
+                <select id="quote-type"></select>
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.pagesLabel"></span>
+                <input id="quote-pages" type="number" min="1" max="250" value="6" />
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.designLabel"></span>
+                <select id="quote-design"></select>
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.deadlineLabel"></span>
+                <select id="quote-deadline"></select>
+              </label>
+              <label class="checkbox-row"><input id="quote-seo" type="checkbox" /><span data-i18n="quoteCalculator.seo"></span></label>
+              <label class="checkbox-row"><input id="quote-admin" type="checkbox" /><span data-i18n="quoteCalculator.admin"></span></label>
+              <label class="checkbox-row"><input id="quote-api" type="checkbox" /><span data-i18n="quoteCalculator.api"></span></label>
+              <label class="checkbox-row"><input id="quote-content" type="checkbox" /><span data-i18n="quoteCalculator.content"></span></label>
+            </form>
+
+            <aside class="quote-summary card">
+              <h3 data-i18n="quoteCalculator.summaryTitle">Estimate</h3>
+              <p class="quote-price"><span data-i18n="quoteCalculator.priceLabel"></span> <strong id="quote-price">₪0</strong></p>
+              <ul id="quote-breakdown"></ul>
+              <p class="muted" data-i18n="quoteCalculator.disclaimer"></p>
+              <a class="btn-primary" href="#contact" data-i18n="quoteCalculator.startBtn">Start this project</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section id="portfolio" class="section reveal">
         <div class="container">
           <div class="section-header">
@@ -71,6 +114,94 @@
             <div class="filters" id="portfolio-filters"></div>
           </div>
           <div class="portfolio-grid" id="portfolio-grid"></div>
+        </div>
+      </section>
+
+      <section id="demos" class="section reveal">
+        <div class="container">
+          <h2 data-i18n="demos.title">Interactive Demos</h2>
+          <p class="lead" data-i18n="demos.intro"></p>
+
+          <div class="demo-grid">
+            <article class="demo-card card" data-demo="calculator">
+              <button class="demo-toggle" type="button" data-demo-toggle="calculator" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.calculator.title"></h3>
+              <p data-i18n="demos.calculator.description"></p>
+              <div class="demo-content" id="demo-calculator">
+                <form class="demo-form" id="calculator-form">
+                  <label>
+                    <span data-i18n="demos.calculator.typeLabel"></span>
+                    <select id="calc-type"></select>
+                  </label>
+                  <label>
+                    <span data-i18n="demos.calculator.pagesLabel"></span>
+                    <input id="calc-pages" type="number" min="1" max="200" value="5" />
+                  </label>
+                  <label class="checkbox-row"><input id="calc-seo" type="checkbox" /><span data-i18n="demos.calculator.seo"></span></label>
+                  <label class="checkbox-row"><input id="calc-admin" type="checkbox" /><span data-i18n="demos.calculator.admin"></span></label>
+                  <label class="checkbox-row"><input id="calc-api" type="checkbox" /><span data-i18n="demos.calculator.api"></span></label>
+                </form>
+                <p class="demo-result"><span data-i18n="demos.calculator.resultLabel"></span> <strong id="calc-result">₪0</strong></p>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="api">
+              <button class="demo-toggle" type="button" data-demo-toggle="api" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.api.title"></h3>
+              <p data-i18n="demos.api.description"></p>
+              <div class="demo-content" id="demo-api">
+                <button id="load-posts" class="btn-secondary" type="button" data-i18n="demos.api.loadButton"></button>
+                <div id="api-loader" class="demo-loader" hidden data-i18n="demos.api.loading"></div>
+                <div id="api-posts" class="demo-posts"></div>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="dashboard">
+              <button class="demo-toggle" type="button" data-demo-toggle="dashboard" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.dashboard.title"></h3>
+              <p data-i18n="demos.dashboard.description"></p>
+              <div class="demo-content" id="demo-dashboard">
+                <div class="stats-grid">
+                  <div class="stat-card"><span data-i18n="demos.dashboard.visits"></span><strong id="stat-visits">0</strong></div>
+                  <div class="stat-card"><span data-i18n="demos.dashboard.users"></span><strong id="stat-users">0</strong></div>
+                  <div class="stat-card"><span data-i18n="demos.dashboard.conversions"></span><strong id="stat-conv">0%</strong></div>
+                </div>
+                <canvas id="dashboard-canvas" width="640" height="280" aria-label="Dashboard chart"></canvas>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="validation">
+              <button class="demo-toggle" type="button" data-demo-toggle="validation" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.validation.title"></h3>
+              <p data-i18n="demos.validation.description"></p>
+              <div class="demo-content" id="demo-validation">
+                <form class="demo-form" id="validation-form" novalidate>
+                  <label>
+                    <span data-i18n="demos.validation.name"></span>
+                    <input type="text" id="v-name" />
+                    <small class="error" id="e-name"></small>
+                  </label>
+                  <label>
+                    <span data-i18n="demos.validation.email"></span>
+                    <input type="email" id="v-email" />
+                    <small class="error" id="e-email"></small>
+                  </label>
+                  <label>
+                    <span data-i18n="demos.validation.phone"></span>
+                    <input type="tel" id="v-phone" />
+                    <small class="error" id="e-phone"></small>
+                  </label>
+                  <label>
+                    <span data-i18n="demos.validation.message"></span>
+                    <textarea id="v-message" rows="4"></textarea>
+                    <small class="error" id="e-message"></small>
+                  </label>
+                  <button type="submit" class="btn-primary" data-i18n="demos.validation.submit"></button>
+                  <p id="validation-success" class="success-msg" hidden data-i18n="demos.validation.success"></p>
+                </form>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -93,7 +224,7 @@
           <div>
             <h2 data-i18n="contact.title">Contact</h2>
             <p><strong data-i18n="contact.phoneLabel">Phone:</strong> +972-50-000-0000</p>
-            <p><strong>Email:</strong> hello@htwd.dev</p>
+            <p><strong data-i18n="contact.emailLabel">Email:</strong> hello@htwd.dev</p>
             <a class="btn-secondary" href="https://wa.me/972500000000" target="_blank" rel="noopener" data-i18n="contact.whatsapp">Chat on WhatsApp</a>
           </div>
           <form class="contact-form">
@@ -116,7 +247,7 @@
 
     <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
       <div class="modal-content">
-        <button class="close-modal" id="close-modal" aria-label="Close">×</button>
+        <button class="close-modal" id="close-modal" data-i18n-aria-label="portfolio.close" aria-label="Close">×</button>
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
         <a id="modal-link" class="btn-primary" href="#" target="_blank" rel="noopener" data-i18n="portfolio.viewProject">View Project</a>
