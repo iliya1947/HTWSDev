@@ -363,5 +363,48 @@
       ],
       "outro": "You get a technically strong SEO base that improves discoverability and supports long-term growth."
     }
+  },
+  "quoteCalculator": {
+    "title": "Website Cost Calculator",
+    "subtitle": "I use this calculator to provide a realistic project estimate based on scope, complexity, and delivery timeline.",
+    "cta": "Discuss exact scope",
+    "typeLabel": "Project type",
+    "pagesLabel": "Number of pages",
+    "designLabel": "Design complexity",
+    "deadlineLabel": "Delivery timeline",
+    "seo": "SEO setup",
+    "admin": "Admin panel",
+    "api": "API integrations",
+    "content": "Content upload & formatting",
+    "summaryTitle": "Estimated budget",
+    "priceLabel": "Estimated total:",
+    "disclaimer": "This is a preliminary estimate. Final price depends on technical details and integrations.",
+    "startBtn": "Start this project",
+    "types": {
+      "Landing": "Landing",
+      "Business": "Business Website",
+      "E-commerce": "E-commerce",
+      "Web App": "Web Application"
+    },
+    "designs": {
+      "Standard": "Standard UI",
+      "Premium": "Premium UI/UX",
+      "Enterprise": "Enterprise-level design system"
+    },
+    "deadlines": {
+      "Flexible": "Flexible timeline",
+      "Priority": "Priority delivery",
+      "Urgent": "Urgent delivery"
+    },
+    "breakdown": {
+      "base": "Base package",
+      "pages": "Additional pages",
+      "design": "Design level",
+      "deadline": "Timeline",
+      "seo": "SEO setup",
+      "admin": "Admin panel",
+      "api": "API integrations",
+      "content": "Content upload"
+    }
   }
 }

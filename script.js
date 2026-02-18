@@ -54,6 +54,25 @@ const calcBase = {
   "Web App": 9800,
 };
 
+const quoteBase = {
+  Landing: 2800,
+  Business: 6200,
+  "E-commerce": 9800,
+  "Web App": 14500,
+};
+
+const designMultipliers = {
+  Standard: 1,
+  Premium: 1.18,
+  Enterprise: 1.35,
+};
+
+const deadlineMultipliers = {
+  Flexible: 1,
+  Priority: 1.12,
+  Urgent: 1.26,
+};
+
 let dashboardDrawn = false;
 
 function detectLanguage() {
@@ -101,6 +120,8 @@ function applyTranslations() {
   renderFilters("All");
   renderCalculatorOptions();
   updateCalculator();
+  renderQuoteCalculatorOptions();
+  updateQuoteCalculator();
 }
 
 function setDirection(lang) {
@@ -260,6 +281,76 @@ function updateCalculator() {
   if (api) total += 1400;
 
   document.getElementById("calc-result").textContent = `₪${total.toLocaleString("en-US")}`;
+}
+
+function renderQuoteCalculatorOptions() {
+  const types = ["Landing", "Business", "E-commerce", "Web App"];
+  const designs = ["Standard", "Premium", "Enterprise"];
+  const deadlines = ["Flexible", "Priority", "Urgent"];
+
+  const typeEl = document.getElementById("quote-type");
+  const designEl = document.getElementById("quote-design");
+  const deadlineEl = document.getElementById("quote-deadline");
+  if (!typeEl || !designEl || !deadlineEl) return;
+
+  const currentType = typeEl.value || "Business";
+  const currentDesign = designEl.value || "Premium";
+  const currentDeadline = deadlineEl.value || "Flexible";
+
+  typeEl.innerHTML = types.map((item) => `<option value="${item}">${get(t, `quoteCalculator.types.${item}`)}</option>`).join("");
+  designEl.innerHTML = designs.map((item) => `<option value="${item}">${get(t, `quoteCalculator.designs.${item}`)}</option>`).join("");
+  deadlineEl.innerHTML = deadlines.map((item) => `<option value="${item}">${get(t, `quoteCalculator.deadlines.${item}`)}</option>`).join("");
+
+  typeEl.value = types.includes(currentType) ? currentType : "Business";
+  designEl.value = designs.includes(currentDesign) ? currentDesign : "Premium";
+  deadlineEl.value = deadlines.includes(currentDeadline) ? currentDeadline : "Flexible";
+}
+
+function updateQuoteCalculator() {
+  const type = document.getElementById("quote-type")?.value || "Business";
+  const pages = Math.max(1, Number(document.getElementById("quote-pages")?.value) || 1);
+  const design = document.getElementById("quote-design")?.value || "Premium";
+  const deadline = document.getElementById("quote-deadline")?.value || "Flexible";
+
+  const options = {
+    seo: document.getElementById("quote-seo")?.checked,
+    admin: document.getElementById("quote-admin")?.checked,
+    api: document.getElementById("quote-api")?.checked,
+    content: document.getElementById("quote-content")?.checked,
+  };
+
+  const pageCost = pages * 300;
+  let subtotal = quoteBase[type] + pageCost;
+  if (options.seo) subtotal += 1200;
+  if (options.admin) subtotal += 2200;
+  if (options.api) subtotal += 1800;
+  if (options.content) subtotal += 900;
+
+  const total = Math.round(subtotal * designMultipliers[design] * deadlineMultipliers[deadline]);
+  const priceEl = document.getElementById("quote-price");
+  if (priceEl) priceEl.textContent = `₪${total.toLocaleString("en-US")}`;
+
+  const breakdownEl = document.getElementById("quote-breakdown");
+  if (!breakdownEl) return;
+  const breakdown = [
+    `${get(t, "quoteCalculator.breakdown.base")} — ₪${quoteBase[type].toLocaleString("en-US")}`,
+    `${get(t, "quoteCalculator.breakdown.pages")} (${pages}) — ₪${pageCost.toLocaleString("en-US")}`,
+    `${get(t, "quoteCalculator.breakdown.design")} — ${get(t, `quoteCalculator.designs.${design}`)}`,
+    `${get(t, "quoteCalculator.breakdown.deadline")} — ${get(t, `quoteCalculator.deadlines.${deadline}`)}`,
+  ];
+
+  if (options.seo) breakdown.push(`${get(t, "quoteCalculator.breakdown.seo")} — ₪1,200`);
+  if (options.admin) breakdown.push(`${get(t, "quoteCalculator.breakdown.admin")} — ₪2,200`);
+  if (options.api) breakdown.push(`${get(t, "quoteCalculator.breakdown.api")} — ₪1,800`);
+  if (options.content) breakdown.push(`${get(t, "quoteCalculator.breakdown.content")} — ₪900`);
+
+  breakdownEl.innerHTML = breakdown.map((row) => `<li>${row}</li>`).join("");
+}
+
+function bindQuoteCalculator() {
+  const form = document.getElementById("quote-form");
+  if (!form) return;
+  form.addEventListener("input", updateQuoteCalculator);
 }
 
 function bindCalculator() {
@@ -496,6 +587,7 @@ function startHeroCanvas() {
   bindModal();
   bindDemoToggles();
   bindCalculator();
+  bindQuoteCalculator();
   bindApiDemo();
   initDashboardObserver();
   bindValidationDemo();

@@ -63,6 +63,50 @@
         </div>
       </section>
 
+
+      <section id="quote-calculator" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="quoteCalculator.title">Website Cost Calculator</h2>
+            <a class="btn-secondary" href="#contact" data-i18n="quoteCalculator.cta">Discuss exact scope</a>
+          </div>
+          <p class="lead" data-i18n="quoteCalculator.subtitle"></p>
+
+          <div class="quote-calculator-grid">
+            <form class="quote-form card" id="quote-form">
+              <label>
+                <span data-i18n="quoteCalculator.typeLabel"></span>
+                <select id="quote-type"></select>
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.pagesLabel"></span>
+                <input id="quote-pages" type="number" min="1" max="250" value="6" />
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.designLabel"></span>
+                <select id="quote-design"></select>
+              </label>
+              <label>
+                <span data-i18n="quoteCalculator.deadlineLabel"></span>
+                <select id="quote-deadline"></select>
+              </label>
+              <label class="checkbox-row"><input id="quote-seo" type="checkbox" /><span data-i18n="quoteCalculator.seo"></span></label>
+              <label class="checkbox-row"><input id="quote-admin" type="checkbox" /><span data-i18n="quoteCalculator.admin"></span></label>
+              <label class="checkbox-row"><input id="quote-api" type="checkbox" /><span data-i18n="quoteCalculator.api"></span></label>
+              <label class="checkbox-row"><input id="quote-content" type="checkbox" /><span data-i18n="quoteCalculator.content"></span></label>
+            </form>
+
+            <aside class="quote-summary card">
+              <h3 data-i18n="quoteCalculator.summaryTitle">Estimate</h3>
+              <p class="quote-price"><span data-i18n="quoteCalculator.priceLabel"></span> <strong id="quote-price">₪0</strong></p>
+              <ul id="quote-breakdown"></ul>
+              <p class="muted" data-i18n="quoteCalculator.disclaimer"></p>
+              <a class="btn-primary" href="#contact" data-i18n="quoteCalculator.startBtn">Start this project</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section id="portfolio" class="section reveal">
         <div class="container">
           <div class="section-header">

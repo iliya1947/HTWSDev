@@ -115,6 +115,18 @@ h2 { margin-top: 0; font-size: clamp(1.6rem, 4vw, 2.5rem); }
   padding: 12px;
   background: rgba(13, 20, 36, 0.9);
 }
+
+.quote-calculator-grid { display: grid; gap: 16px; grid-template-columns: 1.1fr .9fr; }
+.quote-form { display: grid; gap: 10px; }
+.quote-form label { display: grid; gap: 6px; color: var(--muted); }
+.quote-form input, .quote-form select { border: 1px solid var(--border); border-radius: 12px; background: var(--bg-soft); color: var(--text); padding: 10px 12px; }
+.quote-summary { display: grid; align-content: start; gap: 10px; }
+.quote-price { margin: 0; font-size: 1.05rem; }
+.quote-price strong { color: var(--accent); font-size: clamp(1.5rem, 4vw, 2.3rem); }
+.quote-summary ul { margin: 0; padding-inline-start: 18px; }
+.quote-summary li { color: var(--muted); margin: 4px 0; }
+.muted { color: var(--muted); font-size: .92rem; }
+
 .stats-grid {
   display: grid;
   gap: 10px;
@@ -146,6 +158,7 @@ body.rtl .demo-toggle { inset-inline-end: auto; inset-inline-start: 16px; }
 @media (max-width: 920px) {
   .nav { display: none; }
   .contact-grid { grid-template-columns: 1fr; }
+  .quote-calculator-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .section { padding: 70px 0; }
