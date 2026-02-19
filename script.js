@@ -145,12 +145,15 @@ function card(title, desc = "") {
 }
 
 function renderAboutSkills() {
+  const root = document.getElementById("about-skills");
+  if (!root) return;
   const skills = ["frontend", "backend", "api", "performance", "seo"];
-  document.getElementById("about-skills").innerHTML = skills.map((key) => `<li>${get(t, `about.skills.${key}`)}</li>`).join("");
+  root.innerHTML = skills.map((key) => `<li>${get(t, `about.skills.${key}`)}</li>`).join("");
 }
 
 function renderServices() {
   const root = document.getElementById("services-cards");
+  if (!root) return;
   root.innerHTML = services
     .map((name) => {
       const title = get(t, `services.items.${name}.title`);
@@ -162,11 +165,15 @@ function renderServices() {
 }
 
 function renderWhy() {
-  document.getElementById("why-list").innerHTML = whyKeys.map((k) => card(get(t, `why.items.${k}`))).join("");
+  const root = document.getElementById("why-list");
+  if (!root) return;
+  root.innerHTML = whyKeys.map((k) => card(get(t, `why.items.${k}`))).join("");
 }
 
 function renderPricing() {
-  document.getElementById("pricing-cards").innerHTML = pricing
+  const root = document.getElementById("pricing-cards");
+  if (!root) return;
+  root.innerHTML = pricing
     .map((p) => card(`${get(t, `pricing.items.${p.key}.title`)} — ${p.price}`, get(t, `pricing.items.${p.key}.desc`)))
     .join("");
 }
@@ -181,11 +188,12 @@ function renderFilters(active) {
     Landing: get(t, "portfolio.filters.landing"),
   };
   const filters = document.getElementById("portfolio-filters");
+  const grid = document.getElementById("portfolio-grid");
+  if (!filters || !grid) return;
   filters.innerHTML = all
     .map((f) => `<button class="filter-btn ${f === active ? "active" : ""}" data-filter="${f}">${trans[f]}</button>`)
     .join("");
 
-  const grid = document.getElementById("portfolio-grid");
   const shown = active === "All" ? portfolio : portfolio.filter((p) => p.category === active);
   grid.innerHTML = shown
     .map((item) => {
@@ -201,13 +209,17 @@ function renderFilters(active) {
 }
 
 function bindPortfolio() {
-  document.getElementById("portfolio-filters").addEventListener("click", (e) => {
+  const filters = document.getElementById("portfolio-filters");
+  const grid = document.getElementById("portfolio-grid");
+  if (!filters || !grid) return;
+
+  filters.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-filter]");
     if (!btn) return;
     renderFilters(btn.dataset.filter);
   });
 
-  document.getElementById("portfolio-grid").addEventListener("click", (e) => {
+  grid.addEventListener("click", (e) => {
     const btn = e.target.closest(".view-project");
     if (!btn) return;
     const id = btn.dataset.id;
@@ -223,7 +235,9 @@ function bindPortfolio() {
 
 function bindModal() {
   const modal = document.getElementById("project-modal");
-  document.getElementById("close-modal").addEventListener("click", () => {
+  const closeBtn = document.getElementById("close-modal");
+  if (!modal || !closeBtn) return;
+  closeBtn.addEventListener("click", () => {
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
   });
@@ -262,6 +276,7 @@ function bindDemoToggles() {
 
 function renderCalculatorOptions() {
   const select = document.getElementById("calc-type");
+  if (!select) return;
   const types = ["Landing", "Business", "E-commerce", "Web App"];
   const currentValue = select.value || "Business";
   select.innerHTML = types.map((type) => `<option value="${type}">${get(t, `demos.calculator.types.${type}`)}</option>`).join("");
@@ -269,18 +284,26 @@ function renderCalculatorOptions() {
 }
 
 function updateCalculator() {
-  const type = document.getElementById("calc-type").value;
-  const pages = Math.max(1, Number(document.getElementById("calc-pages").value) || 1);
-  const seo = document.getElementById("calc-seo").checked;
-  const admin = document.getElementById("calc-admin").checked;
-  const api = document.getElementById("calc-api").checked;
+  const typeEl = document.getElementById("calc-type");
+  const pagesEl = document.getElementById("calc-pages");
+  const seoEl = document.getElementById("calc-seo");
+  const adminEl = document.getElementById("calc-admin");
+  const apiEl = document.getElementById("calc-api");
+  const resultEl = document.getElementById("calc-result");
+  if (!typeEl || !pagesEl || !seoEl || !adminEl || !apiEl || !resultEl) return;
+
+  const type = typeEl.value;
+  const pages = Math.max(1, Number(pagesEl.value) || 1);
+  const seo = seoEl.checked;
+  const admin = adminEl.checked;
+  const api = apiEl.checked;
 
   let total = calcBase[type] + pages * 250;
   if (seo) total += 900;
   if (admin) total += 1800;
   if (api) total += 1400;
 
-  document.getElementById("calc-result").textContent = `₪${total.toLocaleString("en-US")}`;
+  resultEl.textContent = `₪${total.toLocaleString("en-US")}`;
 }
 
 function renderQuoteCalculatorOptions() {
@@ -355,12 +378,14 @@ function bindQuoteCalculator() {
 
 function bindCalculator() {
   const form = document.getElementById("calculator-form");
+  if (!form) return;
   form.addEventListener("input", updateCalculator);
 }
 
 async function loadApiPosts() {
   const loader = document.getElementById("api-loader");
   const container = document.getElementById("api-posts");
+  if (!loader || !container) return;
   loader.hidden = false;
   container.innerHTML = "";
 
@@ -386,7 +411,9 @@ async function loadApiPosts() {
 }
 
 function bindApiDemo() {
-  document.getElementById("load-posts").addEventListener("click", loadApiPosts);
+  const btn = document.getElementById("load-posts");
+  if (!btn) return;
+  btn.addEventListener("click", loadApiPosts);
 }
 
 function rand(min, max) {
@@ -396,6 +423,7 @@ function rand(min, max) {
 function drawDashboard() {
   if (dashboardDrawn) return;
   const canvas = document.getElementById("dashboard-canvas");
+  if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const w = canvas.width;
   const h = canvas.height;
@@ -405,9 +433,14 @@ function drawDashboard() {
     y: h - rand(40, 220),
   }));
 
-  document.getElementById("stat-visits").textContent = rand(18000, 42000).toLocaleString("en-US");
-  document.getElementById("stat-users").textContent = rand(2200, 6900).toLocaleString("en-US");
-  document.getElementById("stat-conv").textContent = `${(rand(20, 75) / 10).toFixed(1)}%`;
+  const visitsEl = document.getElementById("stat-visits");
+  const usersEl = document.getElementById("stat-users");
+  const convEl = document.getElementById("stat-conv");
+  if (!visitsEl || !usersEl || !convEl) return;
+
+  visitsEl.textContent = rand(18000, 42000).toLocaleString("en-US");
+  usersEl.textContent = rand(2200, 6900).toLocaleString("en-US");
+  convEl.textContent = `${(rand(20, 75) / 10).toFixed(1)}%`;
 
   let progress = 0;
   function animate() {
@@ -449,6 +482,7 @@ function drawDashboard() {
 
 function initDashboardObserver() {
   const target = document.getElementById("demo-dashboard");
+  if (!target) return;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -470,6 +504,9 @@ function validateIsraeliPhone(phone) {
 }
 
 function bindValidationDemo() {
+  const form = document.getElementById("validation-form");
+  if (!form) return;
+
   const fields = {
     name: document.getElementById("v-name"),
     email: document.getElementById("v-email"),
@@ -513,7 +550,7 @@ function bindValidationDemo() {
     });
   });
 
-  document.getElementById("validation-form").addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const allValid = Object.keys(fields).every(validateField);
     success.hidden = !allValid;
@@ -522,6 +559,7 @@ function bindValidationDemo() {
 
 function startHeroCanvas() {
   const canvas = document.getElementById("hero-canvas");
+  if (!canvas) return;
   const ctx = canvas.getContext("2d", { alpha: true });
   const codeSnippets = [
     '<div className="">',
