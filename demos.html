@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Demos | High-Tech Websites Development</title>
+    <meta name="description" content="Interactive demos of web development capabilities: calculators, dashboards, API integrations, validation, and UX components." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="top">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" data-i18n="siteTitle">High-Tech Websites Development</a>
+        <nav class="nav" aria-label="Main">
+          <a href="index.html" data-i18n="demosPage.backHome">Back to Home</a>
+          <a href="#demos" data-i18n="nav.demos">Interactive Demos</a>
+        </nav>
+        <div class="lang-switcher" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="he">HE</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal" id="demos">
+        <div class="container">
+          <div class="section-header">
+            <h1 data-i18n="demosPage.title">All Demos</h1>
+            <a class="btn-secondary" href="index.html#contact" data-i18n="demosPage.cta">Discuss your project</a>
+          </div>
+          <p class="lead" data-i18n="demosPage.intro"></p>
+
+          <div class="demo-grid">
+            <article class="demo-card card" data-demo="calculator">
+              <button class="demo-toggle" type="button" data-demo-toggle="calculator" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.calculator.title"></h3>
+              <p data-i18n="demos.calculator.description"></p>
+              <div class="demo-content" id="demo-calculator">
+                <form class="demo-form" id="calculator-form">
+                  <label><span data-i18n="demos.calculator.typeLabel"></span><select id="calc-type"></select></label>
+                  <label><span data-i18n="demos.calculator.pagesLabel"></span><input id="calc-pages" type="number" min="1" max="200" value="5" /></label>
+                  <label class="checkbox-row"><input id="calc-seo" type="checkbox" /><span data-i18n="demos.calculator.seo"></span></label>
+                  <label class="checkbox-row"><input id="calc-admin" type="checkbox" /><span data-i18n="demos.calculator.admin"></span></label>
+                  <label class="checkbox-row"><input id="calc-api" type="checkbox" /><span data-i18n="demos.calculator.api"></span></label>
+                </form>
+                <p class="demo-result"><span data-i18n="demos.calculator.resultLabel"></span> <strong id="calc-result">₪0</strong></p>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="api">
+              <button class="demo-toggle" type="button" data-demo-toggle="api" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.api.title"></h3>
+              <p data-i18n="demos.api.description"></p>
+              <div class="demo-content" id="demo-api">
+                <button id="load-posts" class="btn-secondary" type="button" data-i18n="demos.api.loadButton"></button>
+                <div id="api-loader" class="demo-loader" hidden data-i18n="demos.api.loading"></div>
+                <div id="api-posts" class="demo-posts"></div>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="dashboard">
+              <button class="demo-toggle" type="button" data-demo-toggle="dashboard" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.dashboard.title"></h3>
+              <p data-i18n="demos.dashboard.description"></p>
+              <div class="demo-content" id="demo-dashboard">
+                <div class="stats-grid">
+                  <div class="stat-card"><span data-i18n="demos.dashboard.visits"></span><strong id="stat-visits">0</strong></div>
+                  <div class="stat-card"><span data-i18n="demos.dashboard.users"></span><strong id="stat-users">0</strong></div>
+                  <div class="stat-card"><span data-i18n="demos.dashboard.conversions"></span><strong id="stat-conv">0%</strong></div>
+                </div>
+                <canvas id="dashboard-canvas" width="640" height="280" aria-label="Dashboard chart"></canvas>
+              </div>
+            </article>
+
+            <article class="demo-card card" data-demo="validation">
+              <button class="demo-toggle" type="button" data-demo-toggle="validation" data-i18n="demos.open">Open demo</button>
+              <h3 data-i18n="demos.validation.title"></h3>
+              <p data-i18n="demos.validation.description"></p>
+              <div class="demo-content" id="demo-validation">
+                <form class="demo-form" id="validation-form" novalidate>
+                  <label><span data-i18n="demos.validation.name"></span><input type="text" id="v-name" /><small class="error" id="e-name"></small></label>
+                  <label><span data-i18n="demos.validation.email"></span><input type="email" id="v-email" /><small class="error" id="e-email"></small></label>
+                  <label><span data-i18n="demos.validation.phone"></span><input type="tel" id="v-phone" /><small class="error" id="e-phone"></small></label>
+                  <label><span data-i18n="demos.validation.message"></span><textarea id="v-message" rows="4"></textarea><small class="error" id="e-message"></small></label>
+                  <button type="submit" class="btn-primary" data-i18n="demos.validation.submit"></button>
+                  <p id="validation-success" class="success-msg" hidden data-i18n="demos.validation.success"></p>
+                </form>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 data-i18n="demosPage.showcase.ux.title">UX Prototyping Demo</h3>
+              <p data-i18n="demosPage.showcase.ux.description"></p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="demosPage.showcase.animations.title">Canvas / Motion Demo</h3>
+              <p data-i18n="demosPage.showcase.animations.description"></p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="demosPage.showcase.seo.title">Technical SEO Demo</h3>
+              <p data-i18n="demosPage.showcase.seo.description"></p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="demosPage.showcase.integrations.title">Integrations Demo</h3>
+              <p data-i18n="demosPage.showcase.integrations.description"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

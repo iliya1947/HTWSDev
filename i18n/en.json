@@ -6,7 +6,8 @@
     "portfolio": "Portfolio",
     "pricing": "Pricing",
     "contact": "Contact",
-    "demos": "Interactive Demos"
+    "demos": "Interactive Demos",
+    "demosPage": "All Demos"
   },
   "hero": {
     "eyebrow": "Web Developer in Israel",
@@ -405,6 +406,30 @@
       "admin": "Admin panel",
       "api": "API integrations",
       "content": "Content upload"
+    }
+  },
+  "demosPage": {
+    "backHome": "Back to Home",
+    "title": "All Demos in One Place",
+    "intro": "This page combines live interactive demos and additional showcase examples to demonstrate the full range of frontend, backend, UX, API, and optimization tasks I can build.",
+    "cta": "Discuss your project",
+    "showcase": {
+      "ux": {
+        "title": "UX Prototyping Demo",
+        "description": "Rapid interface prototyping, user flows, and component states for MVP and production."
+      },
+      "animations": {
+        "title": "Canvas / Motion Demo",
+        "description": "Animated UI effects, data visualization, and smooth micro-interactions using performant JavaScript."
+      },
+      "seo": {
+        "title": "Technical SEO Demo",
+        "description": "Structured metadata, speed optimizations, and semantic HTML architecture for search visibility."
+      },
+      "integrations": {
+        "title": "Integrations Demo",
+        "description": "Connection scenarios with CRM, payment gateways, external APIs, and automation tools."
+      }
     }
   }
 }
