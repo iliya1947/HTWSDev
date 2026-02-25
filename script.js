@@ -494,6 +494,143 @@ function initDashboardObserver() {
   observer.observe(target);
 }
 
+
+function bindPlaygroundIpDemo() {
+  const inputEl = document.getElementById("ip-input");
+  const fetchBtn = document.getElementById("ip-fetch-btn");
+  const outputEl = document.getElementById("ip-output");
+  if (!inputEl || !fetchBtn || !outputEl) return;
+
+  const renderOutput = (message, state = "") => {
+    outputEl.textContent = message;
+    outputEl.classList.remove("loading", "error");
+    if (state) outputEl.classList.add(state);
+  };
+
+  fetchBtn.addEventListener("click", async () => {
+    const ip = inputEl.value.trim();
+    const endpoint = ip ? `https://ipapi.co/${encodeURIComponent(ip)}/json/` : "https://ipapi.co/json/";
+
+    renderOutput("Loading IP details...", "loading");
+
+    try {
+      const response = await fetch(endpoint, { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error("IP API request failed");
+
+      const data = await response.json();
+      if (data.error) throw new Error(data.reason || "Unable to fetch IP info");
+
+      const details = [
+        `IP: ${data.ip || "N/A"}`,
+        `City: ${data.city || "N/A"}`,
+        `Country: ${data.country_name || data.country || "N/A"}`,
+        `ISP: ${data.org || "N/A"}`,
+      ];
+      renderOutput(details.join("\n"));
+    } catch (error) {
+      renderOutput("Unable to fetch IP information. Please verify the IP and try again.", "error");
+    }
+  });
+}
+
+function bindPlaygroundPasswordGenerator() {
+  const lengthEl = document.getElementById("password-length");
+  const lengthValueEl = document.getElementById("password-length-value");
+  const uppercaseEl = document.getElementById("password-uppercase");
+  const numbersEl = document.getElementById("password-numbers");
+  const symbolsEl = document.getElementById("password-symbols");
+  const generateBtn = document.getElementById("password-generate-btn");
+  const outputEl = document.getElementById("password-output");
+  const copyBtn = document.getElementById("password-copy-btn");
+  const feedbackEl = document.getElementById("password-copy-feedback");
+  if (!lengthEl || !lengthValueEl || !uppercaseEl || !numbersEl || !symbolsEl || !generateBtn || !outputEl || !copyBtn || !feedbackEl) return;
+
+  const getRandomItem = (array) => array[crypto.getRandomValues(new Uint32Array(1))[0] % array.length];
+
+  const generatePassword = () => {
+    const length = Number(lengthEl.value);
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz".split("");
+    const selectedSets = [lowercaseChars];
+
+    if (uppercaseEl.checked) selectedSets.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
+    if (numbersEl.checked) selectedSets.push("0123456789".split(""));
+    if (symbolsEl.checked) selectedSets.push("!@#$%^&*()_+-=[]{}|;:,.<>?".split(""));
+
+    const allChars = selectedSets.flat();
+    const passwordChars = selectedSets.map((set) => getRandomItem(set));
+
+    while (passwordChars.length < length) {
+      passwordChars.push(getRandomItem(allChars));
+    }
+
+    for (let i = passwordChars.length - 1; i > 0; i -= 1) {
+      const randomIndex = crypto.getRandomValues(new Uint32Array(1))[0] % (i + 1);
+      [passwordChars[i], passwordChars[randomIndex]] = [passwordChars[randomIndex], passwordChars[i]];
+    }
+
+    outputEl.value = passwordChars.join("");
+    feedbackEl.hidden = true;
+  };
+
+  lengthEl.addEventListener("input", () => {
+    lengthValueEl.textContent = lengthEl.value;
+  });
+
+  generateBtn.addEventListener("click", generatePassword);
+
+  copyBtn.addEventListener("click", async () => {
+    if (!outputEl.value) return;
+    try {
+      await navigator.clipboard.writeText(outputEl.value);
+      feedbackEl.hidden = false;
+      setTimeout(() => {
+        feedbackEl.hidden = true;
+      }, 1200);
+    } catch (error) {
+      feedbackEl.textContent = "Copy failed";
+      feedbackEl.hidden = false;
+      setTimeout(() => {
+        feedbackEl.textContent = "Copied!";
+        feedbackEl.hidden = true;
+      }, 1200);
+    }
+  });
+
+  generatePassword();
+}
+
+function bindPlaygroundJsonFormatter() {
+  const inputEl = document.getElementById("json-input");
+  const formatBtn = document.getElementById("json-format-btn");
+  const outputEl = document.getElementById("json-output");
+  const errorEl = document.getElementById("json-error");
+  if (!inputEl || !formatBtn || !outputEl || !errorEl) return;
+
+  formatBtn.addEventListener("click", () => {
+    const raw = inputEl.value.trim();
+    if (!raw) {
+      outputEl.textContent = "";
+      errorEl.textContent = "Please provide JSON to format.";
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(raw);
+      outputEl.textContent = JSON.stringify(parsed, null, 2);
+      errorEl.textContent = "";
+    } catch (error) {
+      outputEl.textContent = "";
+      errorEl.textContent = "Invalid JSON. Please check syntax and try again.";
+    }
+  });
+}
+
+function bindInteractivePlayground() {
+  bindPlaygroundIpDemo();
+  bindPlaygroundPasswordGenerator();
+  bindPlaygroundJsonFormatter();
+}
+
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -629,6 +766,7 @@ function startHeroCanvas() {
   bindApiDemo();
   initDashboardObserver();
   bindValidationDemo();
+  bindInteractivePlayground();
   initReveal();
   startHeroCanvas();
   await setLanguage(detectLanguage());

@@ -62,6 +62,51 @@
         </div>
       </section>
 
+      <section id="playground" class="section reveal">
+        <div class="container">
+          <h2>🧪 Interactive Playground</h2>
+          <p class="lead">Real-time interactive demos showcasing development capabilities.</p>
+
+          <div class="playground-grid">
+            <article class="card playground-card reveal">
+              <h3>Live API Demo (IP Info Loader)</h3>
+              <div class="playground-controls">
+                <input id="ip-input" type="text" placeholder="Enter IP (leave empty to auto-detect)" />
+                <button id="ip-fetch-btn" class="btn-primary" type="button">Fetch Info</button>
+              </div>
+              <div id="ip-output" class="playground-output" aria-live="polite">Ready to fetch IP details.</div>
+            </article>
+
+            <article class="card playground-card reveal">
+              <h3>Password Generator Tool</h3>
+              <div class="playground-controls">
+                <label for="password-length">Length: <span id="password-length-value">16</span></label>
+                <input id="password-length" type="range" min="8" max="32" value="16" />
+                <label class="checkbox-row"><input id="password-uppercase" type="checkbox" checked /> Include uppercase</label>
+                <label class="checkbox-row"><input id="password-numbers" type="checkbox" checked /> Include numbers</label>
+                <label class="checkbox-row"><input id="password-symbols" type="checkbox" checked /> Include symbols</label>
+                <button id="password-generate-btn" class="btn-primary" type="button">Generate Password</button>
+              </div>
+              <div class="password-output-wrap">
+                <input id="password-output" type="text" readonly aria-label="Generated password" />
+                <button id="password-copy-btn" class="btn-secondary" type="button">Copy</button>
+              </div>
+              <p id="password-copy-feedback" class="success-msg" hidden>Copied!</p>
+            </article>
+
+            <article class="card playground-card reveal">
+              <h3>JSON Formatter</h3>
+              <div class="playground-controls">
+                <textarea id="json-input" rows="8" placeholder='Paste JSON here, for example: {"name":"HTWSDev"}'></textarea>
+                <button id="json-format-btn" class="btn-primary" type="button">Format JSON</button>
+              </div>
+              <p id="json-error" class="error"></p>
+              <pre id="json-output" class="playground-output json-output" aria-live="polite"></pre>
+            </article>
+          </div>
+        </div>
+      </section>
+
 
       <section id="quote-calculator" class="section reveal">
         <div class="container">
